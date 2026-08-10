@@ -15,7 +15,9 @@ body {
   font-optical-sizing: auto;
   font-weight: 300;
   font-style: normal;
-  background-image: url("../img/background.jpg");
+  background-image: 
+  linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+  url("../img/assistive.png.jpg");
   background-size: cover;
   background-position: center;
 }
@@ -68,7 +70,7 @@ main {
 }
 
 .login_box,
-.add_student_box {
+.add_device_box {
   max-width: 400px;
   width: 100%;
   margin: auto;
@@ -82,7 +84,7 @@ main {
 }
 
 .login_box h1,
-.add_student_box h1 {
+.add_device_box h1 {
   color: black;
   margin-bottom: 20px;
   text-align: center;
@@ -90,7 +92,7 @@ main {
 }
 
 .login_form,
-.add_student_form {
+.add_device_form {
   display: flex;
   flex-direction: column;
 }
@@ -98,7 +100,7 @@ main {
 .login_form input[type="text"],
 .login_form input[type="password"],
 .login_form input[type="submit"],
-.add_student_form input[type="text"] {
+.add_device_form input[type="text"] {
   padding: 15px;
   margin-bottom: 20px;
   border: 1px solid #ccc;
@@ -107,7 +109,7 @@ main {
 }
 
 .login_form input[type="submit"],
-.add_student_form input[type="submit"] {
+.add_device_form input[type="submit"] {
   background-color: black;
   color: white;
   border: none;
@@ -118,11 +120,11 @@ main {
 }
 
 .login_form input[type="submit"]:hover,
-.add_student_form input[type="submit"]:hover {
+.add_device_form input[type="submit"]:hover {
   background-color: rgb(26, 26, 26);
 }
 
-.students {
+.devices {
   max-width: 800px;
   width: 100%;
   margin: auto;
@@ -135,37 +137,37 @@ main {
   justify-content: center;
 }
 
-.students h1 {
+.devices h1 {
   color: black;
   margin-bottom: 20px;
   text-align: center;
   font-weight: 500;
 }
 
-.student_table {
+.device_table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
 }
 
-.student_table th,
-.student_table td {
+.device_table th,
+.device_table td {
   padding: 15px;
   border: 1px solid #ccc;
   text-align: left;
 }
 
-.student_table th {
+.device_table th {
   background-color: #f2f2f2;
   color: black;
   font-weight: 400;
 }
 
-.student_table tr:nth-child(even) {
+.device_table tr:nth-child(even) {
   background-color: rgba(255, 255, 255, 0.2);
 }
 
-.student_table tr:hover {
+.device_table tr:hover {
   background-color: #ddd;
   cursor: default;
 }
