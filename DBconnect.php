@@ -8,7 +8,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 else{
-    //echo "Connection successful";
+   // echo "Connection successful";
     mysqli_select_db($conn, $dbname);
 }
 ?>

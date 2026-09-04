@@ -1,0 +1,528 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: "Fredoka", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+    url("../img/assistive.png.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+/* ─── NAV ─────────────────────────────────────────────── */
+header {
+  padding: 0 10vh;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.nav_logo h1 a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.7rem;
+  font-weight: 500;
+}
+
+.nav_link {
+  display: flex;
+  list-style: none;
+}
+
+.nav_link li {
+  padding: 0 15px;
+}
+
+.nav_link a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.nav_link a:hover {
+  color: #ccc;
+}
+
+/* ─── MAIN ────────────────────────────────────────────── */
+/* Flex centering only for login/small-form pages;
+   wider pages (coordinator, devices) override via their own wrappers */
+main {
+  display: block;          /* full-width block so wide tables aren't squeezed */
+  width: 100%;
+  padding: 20px 0 60px;
+}
+
+/* ─── SMALL BOXES (login, request, return, result) ───── */
+.login_box,
+.add_device_box {
+  max-width: 480px;
+  width: 100%;
+  margin: 40px auto;
+  padding: 40px;
+  background-color: rgba(255, 255, 255, 0.55);
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login_box h1,
+.add_device_box h1 {
+  color: black;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* ─── FORMS ───────────────────────────────────────────── */
+.login_form,
+.add_device_form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login_form input[type="text"],
+.login_form input[type="email"],
+.login_form input[type="password"],
+.login_form select,
+.add_device_form input[type="text"],
+.add_device_form input[type="number"],
+.add_device_form select {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  width: 100%;
+  font-family: inherit;
+}
+
+.login_form input[type="submit"],
+.add_device_form input[type="submit"] {
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 16px;
+  font-family: inherit;
+}
+
+.login_form input[type="submit"]:hover,
+.add_device_form input[type="submit"]:hover {
+  background-color: rgb(26, 26, 26);
+}
+
+/* ─── DEVICE INVENTORY PAGE ──────────────────────────── */
+.devices {
+  max-width: 900px;
+  width: 100%;
+  margin: 40px auto;
+  padding: 40px;
+  background-color: rgba(255, 255, 255, 0.55);
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.devices h1 {
+  color: black;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* ─── TABLES ──────────────────────────────────────────── */
+.device_table,
+.coord-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-size: 0.92rem;
+}
+
+.device_table th,
+.coord-table th {
+  background-color: #2c3e50;
+  color: #fff;
+  padding: 11px 14px;
+  text-align: center;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.device_table td,
+.coord-table td {
+  padding: 10px 14px;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+
+.device_table tr:last-child td,
+.coord-table tr:last-child td {
+  border-bottom: none;
+}
+
+.device_table tr:nth-child(even) td,
+.coord-table tr:nth-child(even) td {
+  background-color: rgba(255, 255, 255, 0.35);
+}
+
+.device_table tr:hover td,
+.coord-table tr:hover td {
+  background-color: #eaf0fb;
+  cursor: default;
+}
+
+/* ─── COORDINATOR DASHBOARD ──────────────────────────── */
+.coord-dashboard {
+  max-width: 1150px;
+  width: 100%;
+  margin: 30px auto 60px;
+  padding: 36px 28px;
+  background-color: rgba(255, 255, 255, 0.55);
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.coord-dashboard h1 {
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 10px;
+  font-size: 1.9rem;
+  color: #1a1a1a;
+}
+
+/* Tab bar */
+.tab-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+  margin: 20px 0 0;
+}
+
+.tab-btn {
+  padding: 9px 22px;
+  border: none;
+  border-radius: 6px 6px 0 0;
+  background: #dce3ed;
+  color: #2c3e50;
+  font-size: 0.92rem;
+  font-family: inherit;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.tab-btn.active,
+.tab-btn:hover {
+  background: #2c3e50;
+  color: #fff;
+}
+
+/* Tab panels */
+.tab-panel {
+  display: none;
+  padding: 28px 0 10px;
+}
+
+.tab-panel.active {
+  display: block;
+}
+
+.tab-panel h2 {
+  text-align: center;
+  margin-bottom: 18px;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #1a1a1a;
+}
+
+.empty-note {
+  text-align: center;
+  opacity: 0.65;
+  font-style: italic;
+  padding: 20px 0;
+}
+
+/* ─── SEVERITY BADGES ─────────────────────────────────── */
+.badge-remind {
+  background: #27ae60;
+  color: #fff;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+}
+
+.badge-warn {
+  background: #f39c12;
+  color: #fff;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+}
+
+.badge-alert {
+  background: #e74c3c;
+  color: #fff;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+}
+
+/* ─── HOME PAGE ───────────────────────────────────────── */
+.home-hero {
+  text-align: center;
+  padding: 36px 20px 10px;
+  color: white;
+}
+
+.home-hero h1 {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.home-hero p {
+  font-size: 1.05rem;
+  opacity: 0.9;
+}
+
+/* Role tab bar (borrow / return / donate) */
+.role-tab-bar {
+  display: flex;
+  gap: 0;
+  justify-content: center;
+  margin: 28px auto 0;
+  max-width: 540px;
+}
+
+.role-tab-btn {
+  flex: 1;
+  padding: 11px 0;
+  border: none;
+  background: #dce3ed;
+  color: #2c3e50;
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  border-right: 1px solid #b0bec5;
+  transition: background 0.2s;
+}
+
+.role-tab-btn:first-child { border-radius: 8px 0 0 0; }
+.role-tab-btn:last-child  { border-radius: 0 8px 0 0; border-right: none; }
+
+.role-tab-btn.active,
+.role-tab-btn:hover {
+  background: #2c3e50;
+  color: #fff;
+}
+
+.role-tab-panel {
+  display: none;
+  max-width: 540px;
+  margin: 0 auto;
+  padding: 28px 20px 40px;
+}
+
+.role-tab-panel.active {
+  display: block;
+}
+
+.role-tab-panel h2 {
+  text-align: center;
+  margin-bottom: 16px;
+  color: white;
+  font-weight: 500;
+}
+
+/* Action cards inside role panels */
+.action-card {
+  display: block;
+  text-align: center;
+  padding: 18px;
+  margin-bottom: 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.85);
+  color: #2c3e50;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.12);
+  transition: background 0.2s, transform 0.15s;
+}
+
+.action-card:hover {
+  background: rgba(255, 255, 255, 1);
+  color: #1a252f;
+  transform: translateY(-2px);
+}
+
+.action-card p {
+  font-weight: 400;
+  font-size: 0.85rem;
+  margin: 4px 0 0;
+  opacity: 0.75;
+  color: #444;
+}
+
+/* ─── OVERDUE BANNERS ─────────────────────────────────── */
+.overdue-banner {
+  max-width: 820px;
+  margin: 20px auto;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.overdue-banner .banner-hd {
+  padding: 11px 20px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.overdue-banner .banner-bd {
+  padding: 12px 20px;
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+
+.b-remind { background: #eafaf1; border: 1px solid #27ae60; }
+.b-warn   { background: #fef9e7; border: 1px solid #f39c12; }
+.b-alert  { background: #fdedec; border: 1px solid #e74c3c; }
+
+.b-remind .banner-hd { color: #1e8449; background: #d5f5e3; }
+.b-warn   .banner-hd { color: #9a6700; background: #fdebd0; }
+.b-alert  .banner-hd { color: #922b21; background: #fadbd8; }
+
+.overdue-banner a.ret-btn {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 7px 18px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.88rem;
+  color: #fff;
+}
+
+.b-remind a.ret-btn { background: #27ae60; }
+.b-warn   a.ret-btn { background: #f39c12; }
+.b-alert  a.ret-btn { background: #e74c3c; }
+
+/* ─── MISC ────────────────────────────────────────────── */
+.btn {
+  background: #ffffff;
+  border-radius: 6px;
+  color: #000000;
+  font-size: 14.5px;
+  font-weight: 400;
+  text-decoration: none;
+  cursor: pointer;
+  margin: 10px 0;
+  float: right;
+  padding: 10px;
+}
+
+.btn:hover {
+  background: #f5f5f5;
+  text-decoration: none;
+}
+
+/* ─── NAV DROP-DOWN PANELS ───────────────────────────── */
+/* sits flush below the header, full width, dark bg */
+.nav-panel {
+  width: 100%;
+  background: rgba(30, 30, 30, 0.96);
+  border-top: 2px solid rgba(255,255,255,0.12);
+  padding: 20px 10vh;
+  animation: fadeSlide 0.18s ease;
+}
+
+@keyframes fadeSlide {
+  from { opacity:0; transform:translateY(-6px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+
+/* narrow panels (home page — borrow/return/donate) */
+.nav-panel-inner {
+  max-width: 420px;
+}
+
+/* wide panels (coordinator — tables) */
+.nav-panel-wide {
+  max-width: 1150px;
+  margin: 0 auto;
+}
+
+.nav-panel h3,
+.nav-panel-wide h3 {
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 14px;
+}
+
+.nav-panel a {
+  display: block;
+  color: #ccc;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 6px 0;
+  transition: color 0.2s;
+}
+
+.nav-panel a:hover {
+  color: #fff;
+}
+
+/* active/highlighted nav link */
+.nav-tab-link.nav-active {
+  color: #f0c040 !important;
+  border-bottom: 2px solid #f0c040;
+  padding-bottom: 2px;
+}
+
+/* ─── COORDINATOR MAIN SECTION (device table, always visible) ─── */
+.coord-main-section {
+  max-width: 1150px;
+  margin: 36px auto 60px;
+  padding: 36px 28px;
+  background-color: rgba(255, 255, 255, 0.55);
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.coord-main-section h2 {
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #1a1a1a;
+}
+
+/* hint text on home hero */
+.home-hint {
+  font-size: 0.95rem;
+  opacity: 0.8;
+  margin-top: 6px;
+}
